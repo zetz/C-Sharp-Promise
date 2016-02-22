@@ -68,6 +68,11 @@ namespace RSG
         /// Update all pending promises. Must be called for the promises to progress and resolve at all.
         /// </summary>
         void Update(float deltaTime);
+
+        /// <summary>
+        /// Clear all pending promises.
+        /// </summary>
+        void Clear();
     }
 
     public class PromiseTimer : IPromiseTimer
@@ -156,6 +161,14 @@ namespace RSG
                     i++;
                 }
             }
+        }
+
+        /// <summary>
+        /// Clear all pending promises.
+        /// </summary>
+        public void Clear()
+        {
+            waiting.Clear();
         }
     }
 }
